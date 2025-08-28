@@ -6,14 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { font-family: Arial, sans-serif; max-width:800px; margin:20px auto; line-height:1.5; color:#333; }
-    h1,h2,h3 { color:#222; }
-    h1 { text-align:center; }
-    .chart-container { margin:20px 0; text-align:center; }
-    svg { overflow: visible; }
-    .axis-line { stroke: #333; stroke-width: 1; }
-    .drift-line { fill: none; stroke: #0066CC; stroke-width: 2; }
-    .point { fill: #0066CC; cursor: pointer; }
-    .y-label,.x-label { font-size:12px; fill: #333; }
+    h1, h2, h3 { color:#222; }
+    h1 { text-align:center; margin-bottom:4px; }
+    .meta { text-align:center; margin-bottom:24px; }
+    ul { margin:8px 0 16px 20px; }
+    table { width:100%; border-collapse:collapse; margin:12px 0; }
+    th, td { border:1px solid #ccc; padding:8px; vertical-align:middle; }
+    th { background:#f9f9f9; text-align:left; }
+    dl { margin:16px 0; }
+    dt { font-weight:bold; margin-top:12px; }
+    dd { margin-left:20px; }
+    .chart-container { text-align:center; margin:20px 0; }
+    svg { overflow:visible; }
+    .axis-line { stroke:#333; stroke-width:1; }
+    .drift-line { fill:none; stroke:#0066CC; stroke-width:2; }
+    .point { fill:#0066CC; cursor:pointer; }
+    .y-label, .x-label { font-size:12px; fill:#333; }
     .drift-explanation { margin:12px 0; font-size:14px; color:#333; }
     .fact-check dt { font-weight:bold; margin-top:8px; }
     .fact-check dd { margin-left:20px; margin-bottom:12px; color:#c00; }
@@ -22,18 +30,96 @@
 <body>
 
   <h1>Daily Political News Analysis</h1>
-  <h2>Narrative Drift Timeline</h2>
+  <div class="meta">
+    <div><strong>Date:</strong> 2025-08-26</div>
+    <div><strong>Digest ID:</strong> Daily-2025-08-26-#003</div>
+  </div>
 
+  <h2>Neutral Rewrite</h2>
+  <p>
+    On Tuesday, President Donald Trump announced his intention to remove a sitting Federal Reserve Board member, accusing the Fed of “caving to special interests” and “failing to act in the nation’s interest.” This marks a striking reversal from his 2020 praise of the Fed’s independence as a “steady hand” during crises, illustrating actor drift.
+  </p>
+  <p>
+    Federal Reserve Chair Jerome Powell responded by reaffirming the Fed’s dual mandate of “maximum employment and stable prices,” stressing policy will remain “data-driven and insulated from political pressure.”
+  </p>
+  <p>
+    Reaction in Washington was bipartisan. Senator Elizabeth Warren (D–MA) warned that “undermining the Fed sets a dangerous precedent,” while Senator Mitt Romney (R–UT) labeled the move “reckless and destabilizing,” adding that “central bank independence is critical to market confidence.” Outside Congress, former Treasury Secretary Janet Yellen cautioned at a Brookings panel, “Politicizing the Fed’s leadership risks destabilizing markets.”
+  </p>
+  <p>
+    Media outlets framed the story differently: Fox News hailed it as “a decisive step to unshackle the economy,” CNN emphasized “bipartisan criticism” of executive overreach, and Reuters delivered a factual timeline of announcements and scholarly debate.
+  </p>
+
+  <h2>Notable Divergences</h2>
+  <ul>
+    <li><strong>Fox News:</strong> “Trump moves to oust Fed official amid economic ‘drag’” – cast as pro-growth assertiveness.</li>
+    <li><strong>CNN:</strong> “President’s Fed shake-up draws bipartisan criticism” – spotlighted legal and institutional concerns.</li>
+    <li><strong>Reuters:</strong> “U.S. president seeks Fed board removal in bid to spur growth” – focused on facts, timeline, and expert reactions.</li>
+  </ul>
+
+  <h2>Bias Notes</h2>
+  <ul>
+    <li><strong>Political:</strong> Fox echoed administration framing; CNN and Reuters both cited dissenting voices, but CNN carried more emotive language.</li>
+    <li><strong>Non-Political:</strong> Fox used charged terms (“unshackle”); CNN referenced “dangerous precedent”; Reuters avoided loaded wording.</li>
+  </ul>
+
+  <h2>Comparative Metrics</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Outlet</th>
+        <th>Spin</th>
+        <th>Factual Integrity</th>
+        <th>Actor Drift</th>
+        <th>Strategic Silence</th>
+        <th>Media Distortion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fox News</td>
+        <td>High</td>
+        <td>Moderate</td>
+        <td>High</td>
+        <td>Low</td>
+        <td>High</td>
+      </tr>
+      <tr>
+        <td>CNN</td>
+        <td>Moderate</td>
+        <td>High</td>
+        <td>Moderate</td>
+        <td>Moderate</td>
+        <td>Moderate</td>
+      </tr>
+      <tr>
+        <td>Reuters</td>
+        <td>Low</td>
+        <td>High</td>
+        <td>Low</td>
+        <td>None</td>
+        <td>Low</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Narrative Drift Timeline</h2>
   <div class="chart-container">
     <svg viewBox="0 0 500 300" width="100%" height="300">
+      <!-- axes -->
       <line x1="50" y1="50"  x2="50"  y2="250" class="axis-line"/>
       <line x1="50" y1="250" x2="450" y2="250" class="axis-line"/>
+
+      <!-- Y-axis extremes -->
       <text x="45"  y="45"  text-anchor="end" class="y-label">Strongly Pro-Fed</text>
       <text x="45"  y="265" text-anchor="end" class="y-label">Strongly Anti-Fed</text>
+
+      <!-- X-axis years -->
       <text x="100" y="270" text-anchor="middle" class="x-label">2015</text>
       <text x="200" y="270" text-anchor="middle" class="x-label">2018</text>
       <text x="300" y="270" text-anchor="middle" class="x-label">2020</text>
       <text x="400" y="270" text-anchor="middle" class="x-label">2025</text>
+
+      <!-- drift line & points -->
       <path d="M100,70 L200,110 L300,50 L400,200" class="drift-line"/>
       <circle cx="100" cy="70"  r="6" class="point">
         <title>2015: “I commend the Fed’s independence during economic uncertainty.”</title>
@@ -51,15 +137,102 @@
   </div>
 
   <div class="drift-explanation">
-    <p>
-      From 2015–2020, praise for Fed independence was consistent; by 2025, the narrative flipped to accusation of “caving to special interests.”
-    </p>
+    From 2015–2020, praise for Fed independence was consistent; by 2025, rhetoric flipped sharply negative, accusing the Fed of “caving to special interests.”
   </div>
 
   <dl class="fact-check">
     <dt>Fact Check</dt>
     <dd>
       2025 claim “The Fed has caved to special interests” is unsupported; there is no documented case of the Fed yielding to any external pressure group.
+    </dd>
+  </dl>
+
+  <h2>Credibility Score</h2>
+  <table>
+    <tr>
+      <td style="width:120px;">Reuters</td>
+      <td>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <td style="background-color:#4CAF50; width:90%; height:16px;"></td>
+            <td style="background-color:#eee; width:10%;"></td>
+          </tr>
+        </table>
+      </td>
+      <td style="width:40px; text-align:right;">90</td>
+    </tr>
+    <tr>
+      <td>CNN</td>
+      <td>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <td style="background-color:#FF9800; width:80%; height:16px;"></td>
+            <td style="background-color:#eee; width:20%;"></td>
+          </tr>
+        </table>
+      </td>
+      <td style="text-align:right;">80</td>
+    </tr>
+    <tr>
+      <td>Fox News</td>
+      <td>
+        <table style="width:100%; border-collapse:collapse;">
+          <tr>
+            <td style="background-color:#F44336; width:50%; height:16px;"></td>
+            <td style="background-color:#eee; width:50%;"></td>
+          </tr>
+        </table>
+      </td>
+      <td style="text-align:right;">50</td>
+    </tr>
+  </table>
+
+  <h2>Actor Drift Rationale</h2>
+  <h3 id="actor-drift-low">Low Drift</h3>
+  <p>
+    The actor maintains consistent messaging and policy positions over time.  
+    Example: Fed Chair Jerome Powell’s repeated emphasis on inflation targeting from 2020 through 2025.
+  </p>
+  <h3 id="actor-drift-moderate">Moderate Drift</h3>
+  <p>
+    The actor shows selective shifts in framing or emphasis that depart somewhat from prior stances.  
+    Example: President Trump’s 2020 praise for Fed independence contrasted with his 2025 push to oust a board member.
+  </p>
+  <h3 id="actor-drift-high">High Drift</h3>
+  <p>
+    The actor significantly reverses earlier positions or contradicts stated principles.  
+    Example: A public figure who previously condemned executive interference now actively seeks to remove independent regulators.
+  </p>
+
+  <h2>Glossary &amp; Metric Definitions</h2>
+  <dl>
+    <dt>Spin</dt>
+    <dd>
+      Use of editorial framing or loaded language that steers interpretation away from neutral reporting.  
+      Rated Low–High based on frequency and intensity of rhetorical devices.
+    </dd>
+    <dt>Factual Integrity</dt>
+    <dd>
+      Accuracy and completeness of reported facts.  
+      High integrity means minimal errors or omissions.
+    </dd>
+    <dt>Actor Drift</dt>
+    <dd>
+      Degree to which a political actor’s rhetoric or actions diverge from their historical positions.
+    </dd>
+    <dt>Strategic Silence</dt>
+    <dd>
+      Critical facts or viewpoints omitted by an outlet or actor.  
+      Rated None–High based on importance of the excluded information.
+    </dd>
+    <dt>Media Distortion</dt>
+    <dd>
+      Frequency of misrepresentation or exaggeration of facts.  
+      High distortion indicates repeated misleading statements or visuals.
+    </dd>
+    <dt>Credibility Score</dt>
+    <dd>
+      Composite metric (0–100) combining all factors, with higher scores denoting greater overall trustworthiness.
     </dd>
   </dl>
 
