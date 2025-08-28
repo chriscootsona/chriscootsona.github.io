@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Political News Analysis — 2025-08-26</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; max-width:800px; margin:20px auto; line-height:1.5; color:#333; }
+    h1,h2,h3 { color:#222; }
+    h1 { text-align:center; }
+    .chart-container { margin:20px 0; text-align:center; }
+    svg { overflow: visible; }
+    .axis-line { stroke: #333; stroke-width: 1; }
+    .drift-line { fill: none; stroke: #0066CC; stroke-width: 2; }
+    .point { fill: #0066CC; cursor: pointer; }
+    .y-label,.x-label { font-size:12px; fill: #333; }
+    .drift-explanation { margin:12px 0; font-size:14px; color:#333; }
+    .fact-check dt { font-weight:bold; margin-top:8px; }
+    .fact-check dd { margin-left:20px; margin-bottom:12px; color:#c00; }
+  </style>
+</head>
+<body>
+
+  <h1>Daily Political News Analysis</h1>
+  <h2>Narrative Drift Timeline</h2>
+
+  <div class="chart-container">
+    <svg viewBox="0 0 500 300" width="100%" height="300">
+      <line x1="50" y1="50"  x2="50"  y2="250" class="axis-line"/>
+      <line x1="50" y1="250" x2="450" y2="250" class="axis-line"/>
+      <text x="45"  y="45"  text-anchor="end" class="y-label">Strongly Pro-Fed</text>
+      <text x="45"  y="265" text-anchor="end" class="y-label">Strongly Anti-Fed</text>
+      <text x="100" y="270" text-anchor="middle" class="x-label">2015</text>
+      <text x="200" y="270" text-anchor="middle" class="x-label">2018</text>
+      <text x="300" y="270" text-anchor="middle" class="x-label">2020</text>
+      <text x="400" y="270" text-anchor="middle" class="x-label">2025</text>
+      <path d="M100,70 L200,110 L300,50 L400,200" class="drift-line"/>
+      <circle cx="100" cy="70"  r="6" class="point">
+        <title>2015: “I commend the Fed’s independence during economic uncertainty.”</title>
+      </circle>
+      <circle cx="200" cy="110" r="6" class="point">
+        <title>2018: “The Fed’s measured approach has been crucial to stability.”</title>
+      </circle>
+      <circle cx="300" cy="50"  r="6" class="point">
+        <title>2020: “Fed independence is vital in responding to crises.”</title>
+      </circle>
+      <circle cx="400" cy="200" r="6" class="point">
+        <title>2025: “The Fed has caved to special interests and must be held accountable.”</title>
+      </circle>
+    </svg>
+  </div>
+
+  <div class="drift-explanation">
+    <p>
+      From 2015–2020, praise for Fed independence was consistent; by 2025, the narrative flipped to accusation of “caving to special interests.”
+    </p>
+  </div>
+
+  <dl class="fact-check">
+    <dt>Fact Check</dt>
+    <dd>
+      2025 claim “The Fed has caved to special interests” is unsupported; there is no documented case of the Fed yielding to any external pressure group.
+    </dd>
+  </dl>
+
+</body>
+</html>
