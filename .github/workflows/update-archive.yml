@@ -1,0 +1,44 @@
+name: Update Archive Index
+
+on:
+  push:
+    paths:
+      - 'daily/*.html'    # Only run when daily HTML files change
+
+permissions:
+  contents: write
+
+jobs:
+  update-archive:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Find latest HTML file
+      id: findfile
+      run: |
+        latest_file=$(ls -t daily/*.html | head -n 1)
+        echo "latest_file=$latest_file" >> $GITHUB_ENV
+        echo "Latest file: $latest_file"
+
+    - name: Update archive.html
+      run: |
+        file_name=$(basename "$latest_file")
+        file_date="${file_name%.html}"
+        pretty_date=$(date -d "$file_date" +"%B %d, %Y")
+        # Avoid duplicates if re-run
+        if ! grep -q "daily/$file_name" archive.html; then
+          sed -i "0,/<ul>/s//<ul>\n  <li><a href=\"daily\/$file_name\">$pretty_date<\/a><\/li>/" archive.html
+        else
+          echo "Entry for $file_name already exists in archive.html; skipping insert."
+        fi
+
+    - name: Commit changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add archive.html
+        git diff --quiet && echo "No changes to commit." || git commit -m "Add $file_name to archive"
+        git push
