@@ -25,16 +25,20 @@ jobs:
 
     - name: Update archive.html
       run: |
+        # Find newest file by filename (YYYY-MM-DD), not mod time
+        latest_file=$(ls daily/*.html | sort -r | head -n 1)
         file_name=$(basename "$latest_file")
         file_date="${file_name%.html}"
         pretty_date=$(date -d "$file_date" +"%B %d, %Y")
-        # Avoid duplicates if re-run
+
+        # Only insert if link not already in archive.html
         if ! grep -q "daily/$file_name" archive.html; then
-          sed -i "0,/<ul>/s//<ul>\n  <li><a href=\"daily\/$file_name\">$pretty_date<\/a><\/li>/" archive.html
+          # Match <ul> even if it has attributes or spaces
+          sed -i "0,/<ul[^>]*>/s//<ul>\n  <li><a href=\"daily\/$file_name\">$pretty_date<\/a><\/li>/" archive.html
         else
           echo "Entry for $file_name already exists in archive.html; skipping insert."
         fi
-
+        
     - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
